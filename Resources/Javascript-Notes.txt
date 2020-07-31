@@ -1,0 +1,51 @@
+
+
+
+JavaScript actually allows us to call any function without specifying all of the arguments.
+
+Javascript runtim => Execution stack, Message Queue, Event Loop, Web APIs
+
+An async function always returns a Promise
+and what we return from an async function will be the result value of the Promise that the function returns.
+
+Webpack - to bundle together JavaScript modules.
+Babel - to convert ES6 code back to ES5.
+
+Event listeners are something that go into the Controller(MVC) because that's where we are going to delegate what we want to happen
+when user submits the form.
+
+ES6
+- let, const
+- better IIFE
+- strings
+	- template literals
+	- startsWith()
+	- endsWith()
+	- includes()
+	- repeat(int)
+- Arrow functions
+	- Array.from() - to convert from NodeList to Array
+	- for of loop: 
+		for (const ele of arr) {...}
+	- findIndex()
+	- find()
+	- spread operator: works for both Arrays and NodeLists, used in function call.
+	- Rest parameters: used in function declaration to accept arbitrary number of parameters.
+	- Default parameters
+- Maps - key value data structures
+	- set(), get(), delete(), has(), clear()
+	- size
+	- can use anything as keys - number, boolean, function, string, etc.
+	- maps are iterable
+	- easy to manupulate(add/remove) data in a map
+- Classes 
+	- class definitions are not hoisted
+	- we can only add methods to classes not properties
+- fetch(), Promise
+	
+	
+ES8
+- Async/Await -> better way to consume promises
+
+
+
