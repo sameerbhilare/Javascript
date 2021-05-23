@@ -4,16 +4,16 @@
 */
 function b() {
 	var myVar;
-    console.log(myVar); // undefined
+    console.log(myVar); // undefined (from b's execution context)
 }
 
 function a() {
 	var myVar = 2;
-    console.log(myVar); // 2
+    console.log(myVar); // 2 (from a's execution context)
 	b();
 }
 
 var myVar = 1;
-console.log(myVar); // 1
+console.log(myVar); // 1 (from global execution context)
 a();
-console.log(myVar); // 1
+console.log(myVar); // 1 (from global execution context)
