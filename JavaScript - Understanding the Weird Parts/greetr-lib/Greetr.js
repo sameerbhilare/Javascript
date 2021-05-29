@@ -81,7 +81,7 @@
         log: function() {
             // Internet Explorer actually doesn't have a console variable unless its console is open.
             if (console) {
-                console.log(logMessages[this.laguage]+': '+this.fullName());
+                console.log(logMessages[this.language]+': '+this.fullName());
             }
             
             // 'this' refers to the calling object at execution time
@@ -93,6 +93,40 @@
             this.language = lang;
             this.validate();
             
+            // 'this' refers to the calling object at execution time
+            // makes the method chainable
+            return this;
+        },
+        
+        // for jquery support
+        HTMLGreeting: function(selector, formal) {
+            if(!$) {
+                throw 'jQuery not loaded!';
+            }
+            
+            if(!selector) {
+                throw 'Missing jQuery Selector!';
+            }
+            
+            var msg;
+            
+            // if undefined or null it will be coerced to 'false'
+            if (formal) {
+                msg = this.formalGreeting();  
+            }
+            else {
+                msg = this.greeting();  
+            }
+            
+            // $ (jquery) is passed to our library in IIFE arg. Also it is available at global level
+            // updating DOM element
+            $(selector).html(msg);
+
+            // Internet Explorer actually doesn't have a console variable unless its console is open.
+            if (console) {
+                console.log(msg);
+            }
+
             // 'this' refers to the calling object at execution time
             // makes the method chainable
             return this;
