@@ -2,8 +2,16 @@
     We want to create a new execution context for our entire framework/library.
     So all of our variables declared are safe. And we're only exposing on the global object what we want.
 */
+
+
 // passing global window object and jQuery object
-(function(global, $) {
+/*
+    Put a semicolon before your IIFE. That's another trick just in case there's some other code, some other library that may be injected before your code/library (Greetr.js) in a script file maybe above it, and if that doesn't quite finish out its semicolons properly.
+    
+    You can also put a semicolon there to make it more completely useful in that even if the other code doesn't finish its semicolons out properly (code that's used above your code), your code will still run fine.
+
+*/
+;(function(global, $) {
     
     // so that we dont have always use 'new' in application
     var Greetr = function(firstName, lastName, language) {
